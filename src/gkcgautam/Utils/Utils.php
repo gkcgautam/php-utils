@@ -100,7 +100,8 @@ class Utils
      * @param int $decimals
      * @return float File size in KB (2.87 KB)
      */ 
-    public static function getFileSizeInKB ($bytes, $decimals=2){
+    public static function getFileSizeInKB ($bytes, $decimals=2)
+    {
         return round(($bytes/1024), $decimals);
     }
 
@@ -111,7 +112,8 @@ class Utils
      * @param int $decimals
      * @return float File size in KB (2.87 MB)
      */ 
-    public static function getFileSizeInMB ($bytes, $decimals=2){
+    public static function getFileSizeInMB ($bytes, $decimals=2)
+    {
         return round(($bytes/(1024*1024)), $decimals);
     }
 
@@ -216,7 +218,8 @@ class Utils
      * @param array $keys Allowed Keys
      * @return array Filtered Array
      */ 
-    public static function arrayFilterKeys ($arr = array(), $keys=array()){
+    public static function arrayFilterKeys ($arr = array(), $keys=array())
+    {
         if(!empty($arr) && !empty($keys)){
             $res = array();
             foreach($keys as $key){
@@ -237,7 +240,8 @@ class Utils
      * @param array $keys Allowed Keys
      * @return array Filtered Array
      */ 
-    public static function subArraysFilterKeys ($arr = array(), $keys=array()){
+    public static function subArraysFilterKeys ($arr = array(), $keys=array())
+    {
         if(!empty($arr)){
             $res = array();
             foreach($arr as $sub_arr){
@@ -255,7 +259,8 @@ class Utils
      * @param boolean $throw_exception
      * @return string
      */
-    public static function getEscapedPOST ($key, $throw_exception = true) {
+    public static function getEscapedPOST ($key, $throw_exception = true)
+    {
         if(isset($_POST[$key]))
             return self::realEscapeString($_POST[$key]);
 
@@ -273,7 +278,8 @@ class Utils
      * @param boolean $throw_exception
      * @return array
      */
-    public static function getEscapedArrayPOST ($key_arr = array(), $throw_exception = true) {
+    public static function getEscapedArrayPOST ($key_arr = array(), $throw_exception = true)
+    {
         $res = array();
 
         if(!is_array($key_arr) || empty($key_arr))
@@ -288,6 +294,81 @@ class Utils
             }
         }
         return $res;
+    }
+
+    /** 
+     * Checks if date value is valid or not
+     * 
+     * @param string $date Date value to be checked
+     * @param string $format Date format to be expected in $date
+     * @return boolean
+     */
+    public static function isValidDatetime($date, $format = 'Y-m-d H:i:s')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) == $date;
+    }
+
+    /** 
+     * Get IP address of visitor
+     * 
+     * @return string|boolean
+     */
+    public static function getIPAddress()
+    {
+        foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key){
+            if (array_key_exists($key, $_SERVER) === true){
+                foreach (explode(',', $_SERVER[$key]) as $ip){
+                    $ip = trim($ip);
+
+                    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false){
+                        return $ip;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /** 
+     * Returns random value from an array
+     * 
+     * @param array $array
+     * @return mixed
+     */
+    public static function getRandArrayVal($array)
+    {
+        return $array[array_rand($array)];
+    }
+
+    /** 
+     * Returns a random string of specified length
+     * 
+     * @param int $length
+     * @param boolean $include_numbers
+     * @return string
+     */
+    public static function getRandString($length = 10, $include_numbers = true)
+    {
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        if($include_numbers){
+            $characters .= '0123456789';
+        }
+
+        $str = '';
+        for ($i = 0; $i < $length; $i++) {
+            $str .= $characters[rand(0, strlen($characters) - 1)];
+        }
+
+        return $str;
+    }
+
+    /** 
+     * Returns 404 header and die
+     */
+    public static function die404(){
+        header("HTTP/1.0 404 Not Found");
+        die();
     }
 
 }

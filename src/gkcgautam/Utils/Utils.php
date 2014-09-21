@@ -190,4 +190,104 @@ class Utils
         return mysqli::real_escape_string($string);
     }
 
+    /** 
+     * Checks whether all of the params specified are set or not
+     * 
+     * @param string $method GET or POST
+     * @param array $params
+     * @return boolean
+     */ 
+    public static function areParamsSet ($method="POST", $params=array())
+    {
+        if(!empty($params)){
+            foreach ($params as $param) {
+                if( ($method=="POST" && !isset($_POST[$param])) || ($method=="GET" && !isset($_GET[$param])) ){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /** 
+     * Returns an array containing only the allowed keys
+     * 
+     * @param array $arr Original Array
+     * @param array $keys Allowed Keys
+     * @return array Filtered Array
+     */ 
+    public static function arrayFilterKeys ($arr = array(), $keys=array()){
+        if(!empty($arr) && !empty($keys)){
+            $res = array();
+            foreach($keys as $key){
+                if(array_key_exists($key, $arr)){
+                    $res[$key] = $arr[$key];
+                }
+            }
+            return $res;
+        }
+        return $arr;
+    }
+
+    /** 
+     * Returns an array containing filtered sub arrays
+     * Uses arrayFilterKeys method for the filteration
+     * 
+     * @param array $arr Original Array
+     * @param array $keys Allowed Keys
+     * @return array Filtered Array
+     */ 
+    public static function subArraysFilterKeys ($arr = array(), $keys=array()){
+        if(!empty($arr)){
+            $res = array();
+            foreach($arr as $sub_arr){
+                $res[] = self::arrayFilterKeys($sub_arr, $keys);
+            }
+            return $res;
+        }
+        return $arr;
+    }
+
+    /** 
+     * Returns escaped value of a POST param
+     * 
+     * @param string $key
+     * @param boolean $throw_exception
+     * @return string
+     */
+    public static function getEscapedPOST ($key, $throw_exception = true) {
+        if(isset($_POST[$key]))
+            return self::realEscapeString($_POST[$key]);
+
+        if($throw_exception)
+            throw new Exception($key." not found in POST");
+        else
+            return false;
+    }
+
+    /** 
+     * Returns array of escaped POST params
+     * Uses getEscapedPOST method for getting the escaped value
+     * 
+     * @param array $key_arr
+     * @param boolean $throw_exception
+     * @return array
+     */
+    public static function getEscapedArrayPOST ($key_arr = array(), $throw_exception = true) {
+        $res = array();
+
+        if(!is_array($key_arr) || empty($key_arr))
+            return $res;
+
+        foreach ($key_arr as $key) {
+            if(!isset($_POST[$key])) {
+                if($throw_exception)
+                    throw new Exception("Value missing for '$key'");
+            } else {
+                $res[$key] = self::getEscapedPOST($key, false);
+            }
+        }
+        return $res;
+    }
+
 }

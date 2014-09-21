@@ -1,0 +1,24 @@
+{
+    "name": "gkcgautam/php-utils",
+    "type": "library",
+    "keywords": ["util", "php", "library"],
+    "description": "gkcgautam/Utils is a PHP library containing some commonly used utility methods.",
+    "homepage": "https://github.com/gkcgautam/php-utils",
+    "license": "MIT",
+    "version" : "0.1.0",
+    "authors": [
+        {
+            "name": "Gautam Chaudhary",
+            "email": "gkcgautam@gmail.com",
+            "homepage": "http://www.gautamchaudhary.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "gkcgautam": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.3.3"
+    }
+}

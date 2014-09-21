@@ -13,6 +13,13 @@ namespace gkcgautam\Utils;
  */
 class Utils
 {
+    const SECONDS_IN_MINUTE = 60;
+    const SECONDS_IN_HOUR   = 3600;
+    const SECONDS_IN_DAY    = 86400;
+    const SECONDS_IN_WEEK   = 604800;
+    const SECONDS_IN_MONTH  = 2592000;
+    const SECONDS_IN_YEAR   = 31536000;
+
     /**
      * Check if $string is JSON
      *
@@ -348,11 +355,14 @@ class Utils
      * @param boolean $include_numbers
      * @return string
      */
-    public static function getRandString($length = 10, $include_numbers = true)
+    public static function getRandString($length = 10, $include_numbers = true, $include_symbols = false)
     {
         $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         if($include_numbers){
             $characters .= '0123456789';
+        }
+        if($include_symbols){
+            $characters .= '!@#$%^&*()~_-=+{}[]|:;<>,.?/"\'\\`';
         }
 
         $str = '';
@@ -369,6 +379,215 @@ class Utils
     public static function die404(){
         header("HTTP/1.0 404 Not Found");
         die();
+    }
+
+    /**
+     * Checks to see if the page is being server over SSL or not
+     *
+     * @return boolean
+     */
+    public static function isHTTPS()
+    {
+        if ( isset( $_SERVER['HTTPS'] ) && ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off' ) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Truncate a string to a specified length without cutting a word off.
+     * Soure: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65dcd192d9c47d755/src/utilphp/util.php#L1599
+     *
+     * @param   string  $string  The string to truncate
+     * @param   integer $length  The length to truncate the string to
+     * @param   string  $append  Text to append to the string IF it gets
+     *                           truncated, defaults to '...'
+     * @return  string
+     */
+    public static function safeTruncate( $string, $length, $append = '...' )
+    {
+        $ret = substr($string, 0, $length);
+        $last_space = strrpos($ret, ' ');
+
+        if($last_space !== FALSE && $string != $ret) {
+            $ret = substr($ret, 0, $last_space);
+        }
+
+        if($ret != $string) {
+            $ret .= $append;
+        }
+
+        return $ret;
+    }
+
+    /**
+     * Transmit headers that force a browser to display the download file
+     * dialog. Cross browser compatible. Only fires if headers have not
+     * already been sent.
+     * Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65dcd192d9c47d755/src/utilphp/util.php#L1262
+     *
+     * @param string $filename The name of the filename to display to
+     *                         browsers
+     * @param string $content  The content to output for the download.
+     *                         If you don't specify this, just the
+     *                         headers will be sent
+     * @return boolean
+     */
+    public static function forceDownload( $filename, $content = FALSE )
+    {
+        if ( ! headers_sent() ) {
+            // Required for some browsers
+            if ( ini_get( 'zlib.output_compression' ) ) {
+                @ini_set( 'zlib.output_compression', 'Off' );
+            }
+
+            header( 'Pragma: public' );
+            header( 'Expires: 0' );
+            header( 'Cache-Control: must-revalidate, post-check=0, pre-check=0' );
+
+            // Required for certain browsers
+            header( 'Cache-Control: private', FALSE );
+
+            header( 'Content-Disposition: attachment; filename="' . basename( str_replace( '"', '', $filename ) ) . '";' );
+            header( 'Content-Type: application/force-download' );
+            header( 'Content-Transfer-Encoding: binary' );
+
+            if ( $content ) {
+               header( 'Content-Length: ' . strlen( $content ) );
+            }
+
+            ob_clean();
+            flush();
+
+            if ( $content ) {
+                echo $content;
+            }
+
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /**
+     * Return the URL to a user's gravatar.
+     * Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65dcd192d9c47d755/src/utilphp/util.php#L1403
+     *
+     * @param   string  $email The email of the user
+     * @param   integer $size  The size of the gravatar
+     * @return  string
+     */
+    public static function getGravatar( $email, $size = 32 )
+    {
+        if ( self::isHTTPS() ) {
+            $url = 'https://secure.gravatar.com/';
+        } else {
+            $url = 'http://www.gravatar.com/';
+        }
+
+        $url .= 'avatar/' . md5( $email ) . '?s=' . (int) abs( $size );
+
+        return $url;
+    }
+
+    /**
+     * Converts a unix timestamp to a relative time string, such as "3 days ago"
+     * or "2 weeks ago".
+     * Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65dcd192d9c47d755/src/utilphp/util.php#L974
+     *
+     * @param  int    $from   The date to use as a starting point
+     * @param  int    $to     The date to compare to, defaults to now
+     * @param  string $suffix The string to add to the end, defaults to " ago"
+     * @return string
+     */
+    public static function getHumanTimeDiff( $from, $to = '', $as_text = FALSE, $suffix = ' ago' )
+    {
+        if ( $to == '' ) {
+            $to = time();
+        }
+
+        $from = new \DateTime( date( 'Y-m-d H:i:s', $from ) );
+        $to   = new \DateTime( date( 'Y-m-d H:i:s', $to ) );
+        $diff = $from->diff( $to );
+
+        if ( $diff->y > 1 ) {
+            $text = $diff->y . ' years';
+        } else if ( $diff->y == 1 ) {
+            $text = '1 year';
+        } else if ( $diff->m > 1 ) {
+            $text = $diff->m . ' months';
+        } else if ( $diff->m == 1 ) {
+            $text = '1 month';
+        } else if ( $diff->d > 7 ) {
+            $text = ceil( $diff->d / 7 ) . ' weeks';
+        } else if ( $diff->d == 7 ) {
+            $text = '1 week';
+        } else if ( $diff->d > 1 ) {
+            $text = $diff->d . ' days';
+        } else if ( $diff->d == 1 ) {
+            $text = '1 day';
+        } else if ( $diff->h > 1 ) {
+            $text = $diff->h . ' hours';
+        } else if ( $diff->h == 1 ) {
+            $text = ' 1 hour';
+        } else if ( $diff->i > 1 ) {
+            $text = $diff->i . ' minutes';
+        } else if ( $diff->i == 1 ) {
+            $text = '1 minute';
+        } else if ( $diff->s > 1 ) {
+            $text = $diff->s . ' seconds';
+        } else {
+            $text = '1 second';
+        }
+
+        if ( $as_text ) {
+            $text = explode( ' ', $text, 2 );
+            $text = self::number_to_word( $text[0] ) . ' ' . $text[1];
+        }
+
+        return trim( $text ) . $suffix;
+    }
+
+    /**
+     * Sets the headers to prevent caching for the different browsers.
+     *
+     * Different browsers support different nocache headers, so several
+     * headers must be sent so that all of them get the point that no
+     * caching should occur
+     * Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65dcd192d9c47d755/src/utilphp/util.php#L1307
+     *
+     * @return boolean
+     */
+    public static function noCacheHeaders()
+    {
+        if ( ! headers_sent() ) {
+            header( 'Expires: Wed, 11 Jan 1984 05:00:00 GMT' );
+            header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s' ) . ' GMT' );
+            header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
+            header( 'Pragma: no-cache' );
+
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /**
+     * Transmit UTF-8 content headers if the headers haven't already been sent.
+     * Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65dcd192d9c47d755/src/utilphp/util.php#L1239
+     *
+     * @param  string  $content_type The content type to send out
+     * @return boolean
+     */
+    public static function utf8Headers( $content_type = 'text/html' )
+    {
+        if ( ! headers_sent() ) {
+            header( 'Content-type: ' . $content_type . '; charset=utf-8' );
+
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 
 }

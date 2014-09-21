@@ -55,7 +55,7 @@ class Utils
      * @param string $bytes 
      * @return string human readable file size (2.87 МB)
      */ 
-    public static function getHumanReadableFileSize ($bytes)
+    public static function getHumanReadableFileSize ($bytes, $decimals=2)
     {
         $bytes = floatval($bytes);
             $arBytes = array(
@@ -86,7 +86,7 @@ class Utils
             if($bytes >= $arItem["VALUE"])
             {
                 $result = $bytes / $arItem["VALUE"];
-                $result = strval(round($result, 2))." ".$arItem["UNIT"];
+                $result = strval(round($result, $decimals))." ".$arItem["UNIT"];
                 break;
             }
         }
@@ -98,9 +98,9 @@ class Utils
      * 
      * @param string $bytes 
      * @param int $decimals
-     * @return file size in KB (2.87 KB)
+     * @return float File size in KB (2.87 KB)
      */ 
-    public static function getFileSizeInKB ($bytes, $decimals=3){
+    public static function getFileSizeInKB ($bytes, $decimals=2){
         return round(($bytes/1024), $decimals);
     }
 
@@ -109,9 +109,9 @@ class Utils
      * 
      * @param string $bytes 
      * @param int $decimals
-     * @return file size in KB (2.87 MB)
+     * @return float File size in KB (2.87 MB)
      */ 
-    public static function getFileSizeInMB ($bytes, $decimals=3){
+    public static function getFileSizeInMB ($bytes, $decimals=2){
         return round(($bytes/(1024*1024)), $decimals);
     }
 

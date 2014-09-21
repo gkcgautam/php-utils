@@ -381,6 +381,38 @@ class Utils
         die();
     }
 
+    /** 
+     * Creates a directory
+     * 
+     * @param string $path
+     * @param int $permission
+     * @param boolean $recursive
+     * @return boolean
+     */
+    public static function makeDir($path, $permission = 0755, $recursive = true)
+    {
+        if (!file_exists($path)) {
+            return mkdir($path, $permission, $recursive);
+        }
+        return false;
+    }
+
+    /** 
+     * Deletes a file
+     * 
+     * @param string $path
+     * @param boolean $success_if_file_not_found
+     * @return boolean
+     */
+    public static function deleteFile($path, $success_if_file_not_found = true)
+    {
+        if (file_exists($path)) {
+            return unlink($path);
+        }
+        
+        return $success_if_file_not_found;
+    }
+
     /**
      * Checks to see if the page is being server over SSL or not
      *

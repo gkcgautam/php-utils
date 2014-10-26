@@ -17,9 +17,7 @@ Constants
 
 ### SECONDS_IN_MINUTE
 
-```
-const SECONDS_IN_MINUTE = 60
-```
+    const SECONDS_IN_MINUTE = 60
 
 
 
@@ -27,9 +25,7 @@ const SECONDS_IN_MINUTE = 60
 
 ### SECONDS_IN_HOUR
 
-```
-const SECONDS_IN_HOUR = 3600
-```
+    const SECONDS_IN_HOUR = 3600
 
 
 
@@ -37,9 +33,7 @@ const SECONDS_IN_HOUR = 3600
 
 ### SECONDS_IN_DAY
 
-```
-const SECONDS_IN_DAY = 86400
-```
+    const SECONDS_IN_DAY = 86400
 
 
 
@@ -47,9 +41,7 @@ const SECONDS_IN_DAY = 86400
 
 ### SECONDS_IN_WEEK
 
-```
-const SECONDS_IN_WEEK = 604800
-```
+    const SECONDS_IN_WEEK = 604800
 
 
 
@@ -57,9 +49,7 @@ const SECONDS_IN_WEEK = 604800
 
 ### SECONDS_IN_MONTH
 
-```
-const SECONDS_IN_MONTH = 2592000
-```
+    const SECONDS_IN_MONTH = 2592000
 
 
 
@@ -67,9 +57,7 @@ const SECONDS_IN_MONTH = 2592000
 
 ### SECONDS_IN_YEAR
 
-```
-const SECONDS_IN_YEAR = 31536000
-```
+    const SECONDS_IN_YEAR = 31536000
 
 
 
@@ -83,9 +71,7 @@ Methods
 
 ### isJson
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isJson()(string $string)
-```
+    boolean Utils::isJson(string $string)
 
 Check if $string is JSON
 
@@ -93,18 +79,17 @@ Check if $string is JSON
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $string **string**
 
 
 
 ### isHTML
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isHTML()(string $string)
-```
+    boolean Utils::isHTML(string $string)
 
 Check if $string is HTML
 
@@ -112,18 +97,17 @@ Check if $string is HTML
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $string **string**
 
 
 
 ### redirect
 
-```
-mixed gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::redirect()(string $url, boolean $permanent)
-```
+    mixed Utils::redirect(string $url, boolean $permanent)
 
 Redirect to a URL
 
@@ -131,9 +115,10 @@ Redirect to a URL
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $url **string**
 * $permanent **boolean**
 
@@ -141,9 +126,7 @@ Redirect to a URL
 
 ### getHumanReadableFileSize
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getHumanReadableFileSize()(string $bytes, integer $decimals)
-```
+    string Utils::getHumanReadableFileSize(string $bytes, integer $decimals)
 
 Converts bytes into human readable file size.
 
@@ -151,9 +134,10 @@ Original Source: http://php.net/manual/de/function.filesize.php#112996
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $bytes **string**
 * $decimals **integer**
 
@@ -161,9 +145,7 @@ Original Source: http://php.net/manual/de/function.filesize.php#112996
 
 ### getFileSizeInKB
 
-```
-float gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getFileSizeInKB()(string $bytes, integer $decimals)
-```
+    float Utils::getFileSizeInKB(string $bytes, integer $decimals)
 
 Converts bytes into KB
 
@@ -171,9 +153,10 @@ Converts bytes into KB
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $bytes **string**
 * $decimals **integer**
 
@@ -181,9 +164,7 @@ Converts bytes into KB
 
 ### getFileSizeInMB
 
-```
-float gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getFileSizeInMB()(string $bytes, integer $decimals)
-```
+    float Utils::getFileSizeInMB(string $bytes, integer $decimals)
 
 Converts bytes into MB
 
@@ -191,9 +172,10 @@ Converts bytes into MB
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $bytes **string**
 * $decimals **integer**
 
@@ -201,9 +183,7 @@ Converts bytes into MB
 
 ### getImageInfo
 
-```
-array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getImageInfo()(string $file)
-```
+    array Utils::getImageInfo(string $file)
 
 Returns Image info
 
@@ -211,18 +191,17 @@ Returns Image info
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $file **string** - &lt;p&gt;Image file path&lt;/p&gt;
 
 
 
 ### getExtensionFromImageType
 
-```
-\gkcgautam\phpUtils\image gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getExtensionFromImageType()(integer $type, boolean $dot)
-```
+    string Utils::getExtensionFromImageType(integer $type, boolean $dot)
 
 Returns image extension name from image type
 Source: http://php.net/manual/ro/function.image-type-to-extension.php#79688
@@ -231,9 +210,10 @@ Source: http://php.net/manual/ro/function.image-type-to-extension.php#79688
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $type **integer**
 * $dot **boolean**
 
@@ -241,9 +221,7 @@ Source: http://php.net/manual/ro/function.image-type-to-extension.php#79688
 
 ### getExtensionFromFileName
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getExtensionFromFileName()(string $file_name, boolean $lower_case)
-```
+    string Utils::getExtensionFromFileName(string $file_name, boolean $lower_case)
 
 Returns extension from file name
 
@@ -251,9 +229,10 @@ Returns extension from file name
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $file_name **string**
 * $lower_case **boolean**
 
@@ -261,9 +240,7 @@ Returns extension from file name
 
 ### realEscapeString
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::realEscapeString()(string $string, boolean $check_connection_availability)
-```
+    string Utils::realEscapeString(string $string, boolean $check_connection_availability)
 
 Returns escaped string if mysqli connection is available
 
@@ -271,9 +248,10 @@ Returns escaped string if mysqli connection is available
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $string **string**
 * $check_connection_availability **boolean**
 
@@ -281,9 +259,7 @@ Returns escaped string if mysqli connection is available
 
 ### areParamsSet
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::areParamsSet()(string $method, array $params)
-```
+    boolean Utils::areParamsSet(string $method, array $params)
 
 Checks whether all of the params specified are set or not
 
@@ -291,9 +267,10 @@ Checks whether all of the params specified are set or not
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $method **string** - &lt;p&gt;GET or POST&lt;/p&gt;
 * $params **array**
 
@@ -301,9 +278,7 @@ Checks whether all of the params specified are set or not
 
 ### arrayFilterKeys
 
-```
-array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::arrayFilterKeys()(array $arr, array $keys)
-```
+    array Utils::arrayFilterKeys(array $arr, array $keys)
 
 Returns an array containing only the allowed keys
 
@@ -311,9 +286,10 @@ Returns an array containing only the allowed keys
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $arr **array** - &lt;p&gt;Original Array&lt;/p&gt;
 * $keys **array** - &lt;p&gt;Allowed Keys&lt;/p&gt;
 
@@ -321,9 +297,7 @@ Returns an array containing only the allowed keys
 
 ### subArraysFilterKeys
 
-```
-array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::subArraysFilterKeys()(array $arr, array $keys)
-```
+    array Utils::subArraysFilterKeys(array $arr, array $keys)
 
 Returns an array containing filtered sub arrays
 Uses arrayFilterKeys method for the filteration
@@ -332,9 +306,10 @@ Uses arrayFilterKeys method for the filteration
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $arr **array** - &lt;p&gt;Original Array&lt;/p&gt;
 * $keys **array** - &lt;p&gt;Allowed Keys&lt;/p&gt;
 
@@ -342,9 +317,7 @@ Uses arrayFilterKeys method for the filteration
 
 ### getEscapedPOST
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getEscapedPOST()(string $key, boolean $throw_exception)
-```
+    string Utils::getEscapedPOST(string $key, boolean $throw_exception)
 
 Returns escaped value of a POST param
 
@@ -352,9 +325,10 @@ Returns escaped value of a POST param
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $key **string**
 * $throw_exception **boolean**
 
@@ -362,9 +336,7 @@ Returns escaped value of a POST param
 
 ### getEscapedArrayPOST
 
-```
-array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getEscapedArrayPOST()(array $key_arr, boolean $throw_exception)
-```
+    array Utils::getEscapedArrayPOST(array $key_arr, boolean $throw_exception)
 
 Returns array of escaped POST params
 Uses getEscapedPOST method for getting the escaped value
@@ -373,9 +345,10 @@ Uses getEscapedPOST method for getting the escaped value
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $key_arr **array**
 * $throw_exception **boolean**
 
@@ -383,9 +356,7 @@ Uses getEscapedPOST method for getting the escaped value
 
 ### isValidDatetime
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isValidDatetime()(string $date, string $format)
-```
+    boolean Utils::isValidDatetime(string $date, string $format)
 
 Checks if date value is valid or not
 
@@ -393,9 +364,10 @@ Checks if date value is valid or not
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $date **string** - &lt;p&gt;Date value to be checked&lt;/p&gt;
 * $format **string** - &lt;p&gt;Date format to be expected in $date&lt;/p&gt;
 
@@ -403,9 +375,7 @@ Checks if date value is valid or not
 
 ### getIPAddress
 
-```
-string|boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getIPAddress()()
-```
+    string|boolean Utils::getIPAddress()
 
 Get IP address of visitor
 
@@ -413,14 +383,14 @@ Get IP address of visitor
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 
 
 ### getRandArrayVal
 
-```
-mixed gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getRandArrayVal()(array $array)
-```
+    mixed Utils::getRandArrayVal(array $array)
 
 Returns random value from an array
 
@@ -428,18 +398,17 @@ Returns random value from an array
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $array **array**
 
 
 
 ### getRandString
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getRandString()(integer $length, boolean $include_numbers, boolean $include_symbols)
-```
+    string Utils::getRandString(integer $length, boolean $include_numbers, boolean $include_symbols)
 
 Returns a random string of specified length
 
@@ -447,9 +416,10 @@ Returns a random string of specified length
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $length **integer**
 * $include_numbers **boolean**
 * $include_symbols **boolean**
@@ -458,9 +428,7 @@ Returns a random string of specified length
 
 ### die404
 
-```
-mixed gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::die404()()
-```
+    mixed Utils::die404()
 
 Returns 404 header and die
 
@@ -468,14 +436,14 @@ Returns 404 header and die
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 
 
 ### makeDir
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::makeDir()(string $path, integer $permission, boolean $recursive)
-```
+    boolean Utils::makeDir(string $path, integer $permission, boolean $recursive)
 
 Creates a directory
 
@@ -483,9 +451,10 @@ Creates a directory
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $path **string**
 * $permission **integer**
 * $recursive **boolean**
@@ -494,9 +463,7 @@ Creates a directory
 
 ### deleteFile
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::deleteFile()(string $path, boolean $success_if_file_not_found)
-```
+    boolean Utils::deleteFile(string $path, boolean $success_if_file_not_found)
 
 Deletes a file
 
@@ -504,9 +471,10 @@ Deletes a file
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $path **string**
 * $success_if_file_not_found **boolean**
 
@@ -514,9 +482,7 @@ Deletes a file
 
 ### isHTTPS
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isHTTPS()()
-```
+    boolean Utils::isHTTPS()
 
 Checks to see if the page is being server over SSL or not
 
@@ -524,14 +490,14 @@ Checks to see if the page is being server over SSL or not
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 
 
 ### safeTruncate
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::safeTruncate()(string $string, integer $length, string $append)
-```
+    string Utils::safeTruncate(string $string, integer $length, string $append)
 
 Truncate a string to a specified length without cutting a word off.
 
@@ -539,9 +505,10 @@ Soure: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $string **string** - &lt;p&gt;The string to truncate&lt;/p&gt;
 * $length **integer** - &lt;p&gt;The length to truncate the string to&lt;/p&gt;
 * $append **string** - &lt;p&gt;Text to append to the string IF it gets&lt;/p&gt;
@@ -551,9 +518,7 @@ Soure: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65
 
 ### forceDownload
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::forceDownload()(string $filename, string $content)
-```
+    boolean Utils::forceDownload(string $filename, string $content)
 
 Transmit headers that force a browser to display the download file
 dialog. Cross browser compatible. Only fires if headers have not
@@ -563,9 +528,10 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $filename **string** - &lt;p&gt;The name of the filename to display to
                         browsers&lt;/p&gt;
 * $content **string** - &lt;p&gt;The content to output for the download.&lt;/p&gt;
@@ -576,9 +542,7 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 ### getGravatar
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getGravatar()(string $email, integer $size)
-```
+    string Utils::getGravatar(string $email, integer $size)
 
 Return the URL to a user's gravatar.
 
@@ -586,9 +550,10 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $email **string** - &lt;p&gt;The email of the user&lt;/p&gt;
 * $size **integer** - &lt;p&gt;The size of the gravatar&lt;/p&gt;
 
@@ -596,9 +561,7 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 ### getHumanTimeDiff
 
-```
-string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getHumanTimeDiff()(integer $from, integer $to, boolean $as_text, string $suffix)
-```
+    string Utils::getHumanTimeDiff(integer $from, integer $to, boolean $as_text, string $suffix)
 
 Converts a unix timestamp to a relative time string, such as "3 days ago"
 or "2 weeks ago".
@@ -607,9 +570,10 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $from **integer** - &lt;p&gt;The date to use as a starting point&lt;/p&gt;
 * $to **integer** - &lt;p&gt;The date to compare to, defaults to now&lt;/p&gt;
 * $as_text **boolean**
@@ -619,9 +583,7 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 ### noCacheHeaders
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::noCacheHeaders()()
-```
+    boolean Utils::noCacheHeaders()
 
 Sets the headers to prevent caching for the different browsers.
 
@@ -632,14 +594,14 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 
 
 ### utf8Headers
 
-```
-boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::utf8Headers()(string $content_type)
-```
+    boolean Utils::utf8Headers(string $content_type)
 
 Transmit UTF-8 content headers if the headers haven't already been sent.
 
@@ -647,9 +609,10 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 * Visibility: **public**
 * This method is **static**.
+* This method is defined by Utils
+
 
 #### Arguments
-
 * $content_type **string** - &lt;p&gt;The content type to send out&lt;/p&gt;
 
 

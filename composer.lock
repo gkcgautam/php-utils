@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9fdad04dfd6d05dfa0ac71f0c7550583",
+    "hash": "6738b6c949e822a89b43a2199dd29304",
     "packages": [
         {
             "name": "cilex/cilex",
@@ -325,22 +325,25 @@
             "time": "2014-09-25 23:06:16"
         },
         {
-            "name": "evert/phpdoc-md",
-            "version": "0.0.7",
+            "name": "gkcgautam/phpdoc-md",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/evert/phpdoc-md.git",
-                "reference": "cd806e763c43503e10e87b8f529ffc50f5abcc87"
+                "url": "https://github.com/gkcgautam/phpdoc-md.git",
+                "reference": "d9fb4bc39343896adbe0f11a375aaf25ca874cdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/evert/phpdoc-md/zipball/cd806e763c43503e10e87b8f529ffc50f5abcc87",
-                "reference": "cd806e763c43503e10e87b8f529ffc50f5abcc87",
+                "url": "https://api.github.com/repos/gkcgautam/phpdoc-md/zipball/d9fb4bc39343896adbe0f11a375aaf25ca874cdb",
+                "reference": "d9fb4bc39343896adbe0f11a375aaf25ca874cdb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.1",
-                "twig/twig": "1.*"
+                "twig/twig": "~1.16.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "~2.7.0"
             },
             "bin": [
                 "bin/phpdocmd"
@@ -370,7 +373,7 @@
                 "php",
                 "phpdoc"
             ],
-            "time": "2013-02-11 12:39:10"
+            "time": "2014-10-26 14:50:50"
         },
         {
             "name": "jms/metadata",
@@ -2713,7 +2716,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "gkcgautam/phpdoc-md": 20
+    },
     "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"

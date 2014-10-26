@@ -150,7 +150,7 @@ class Utils
      * 
      * @param int $type 
      * @param boolean $dot
-     * @return image extensation (jpg)
+     * @return string image extensation (jpg)
      */ 
     public static function getExtensionFromImageType ($type, $dot = false)
     {

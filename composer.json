@@ -21,6 +21,6 @@
     "require": {
         "php": ">=5.3.3",
         "phpdocumentor/phpdocumentor": "2.*",
-        "evert/phpdoc-md" : "~0.0.7"
+        "gkcgautam/phpdoc-md" : "dev-master"
     }
 }

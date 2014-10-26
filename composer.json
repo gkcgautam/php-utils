@@ -19,7 +19,9 @@
         }
     },
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
         "phpdocumentor/phpdocumentor": "2.*",
         "gkcgautam/phpdoc-md" : "dev-master"
     }

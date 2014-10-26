@@ -6,13 +6,13 @@ Installation / Usage
 --------------------
 Add this to your `composer.json` file:
 
-    ``` json
-    {
-        "require": {
-            "gkcgautam/php-utils": "dev-master"
-        }
+``` json
+{
+    "require": {
+        "gkcgautam/php-utils": "dev-master"
     }
-    ```
+}
+```
 
 Docs
 ------------------------

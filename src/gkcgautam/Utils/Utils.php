@@ -4,7 +4,7 @@
  * @author Gautam Chaudhary <gkcgautam@gmail.com>
  */
 
-namespace gkcgautam\Utils;
+namespace gkcgautam;
 
 /**
  * PHP Utility classes

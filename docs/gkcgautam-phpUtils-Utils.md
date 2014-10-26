@@ -81,7 +81,7 @@ Methods
 -------
 
 
-### \gkcgautam\phpUtils\Utils::isJson()
+### isJson
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isJson()(string $string)
@@ -100,7 +100,7 @@ Check if $string is JSON
 
 
 
-### \gkcgautam\phpUtils\Utils::isHTML()
+### isHTML
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isHTML()(string $string)
@@ -119,7 +119,7 @@ Check if $string is HTML
 
 
 
-### \gkcgautam\phpUtils\Utils::redirect()
+### redirect
 
 ```
 mixed gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::redirect()(string $url, boolean $permanent)
@@ -139,7 +139,7 @@ Redirect to a URL
 
 
 
-### \gkcgautam\phpUtils\Utils::getHumanReadableFileSize()
+### getHumanReadableFileSize
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getHumanReadableFileSize()(string $bytes, integer $decimals)
@@ -159,7 +159,7 @@ Original Source: http://php.net/manual/de/function.filesize.php#112996
 
 
 
-### \gkcgautam\phpUtils\Utils::getFileSizeInKB()
+### getFileSizeInKB
 
 ```
 float gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getFileSizeInKB()(string $bytes, integer $decimals)
@@ -179,7 +179,7 @@ Converts bytes into KB
 
 
 
-### \gkcgautam\phpUtils\Utils::getFileSizeInMB()
+### getFileSizeInMB
 
 ```
 float gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getFileSizeInMB()(string $bytes, integer $decimals)
@@ -199,7 +199,7 @@ Converts bytes into MB
 
 
 
-### \gkcgautam\phpUtils\Utils::getImageInfo()
+### getImageInfo
 
 ```
 array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getImageInfo()(string $file)
@@ -218,7 +218,7 @@ Returns Image info
 
 
 
-### \gkcgautam\phpUtils\Utils::getExtensionFromImageType()
+### getExtensionFromImageType
 
 ```
 \gkcgautam\phpUtils\image gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getExtensionFromImageType()(integer $type, boolean $dot)
@@ -239,7 +239,7 @@ Source: http://php.net/manual/ro/function.image-type-to-extension.php#79688
 
 
 
-### \gkcgautam\phpUtils\Utils::getExtensionFromFileName()
+### getExtensionFromFileName
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getExtensionFromFileName()(string $file_name, boolean $lower_case)
@@ -259,7 +259,7 @@ Returns extension from file name
 
 
 
-### \gkcgautam\phpUtils\Utils::realEscapeString()
+### realEscapeString
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::realEscapeString()(string $string, boolean $check_connection_availability)
@@ -279,7 +279,7 @@ Returns escaped string if mysqli connection is available
 
 
 
-### \gkcgautam\phpUtils\Utils::areParamsSet()
+### areParamsSet
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::areParamsSet()(string $method, array $params)
@@ -299,7 +299,7 @@ Checks whether all of the params specified are set or not
 
 
 
-### \gkcgautam\phpUtils\Utils::arrayFilterKeys()
+### arrayFilterKeys
 
 ```
 array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::arrayFilterKeys()(array $arr, array $keys)
@@ -319,7 +319,7 @@ Returns an array containing only the allowed keys
 
 
 
-### \gkcgautam\phpUtils\Utils::subArraysFilterKeys()
+### subArraysFilterKeys
 
 ```
 array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::subArraysFilterKeys()(array $arr, array $keys)
@@ -340,7 +340,7 @@ Uses arrayFilterKeys method for the filteration
 
 
 
-### \gkcgautam\phpUtils\Utils::getEscapedPOST()
+### getEscapedPOST
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getEscapedPOST()(string $key, boolean $throw_exception)
@@ -360,7 +360,7 @@ Returns escaped value of a POST param
 
 
 
-### \gkcgautam\phpUtils\Utils::getEscapedArrayPOST()
+### getEscapedArrayPOST
 
 ```
 array gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getEscapedArrayPOST()(array $key_arr, boolean $throw_exception)
@@ -381,7 +381,7 @@ Uses getEscapedPOST method for getting the escaped value
 
 
 
-### \gkcgautam\phpUtils\Utils::isValidDatetime()
+### isValidDatetime
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isValidDatetime()(string $date, string $format)
@@ -401,7 +401,7 @@ Checks if date value is valid or not
 
 
 
-### \gkcgautam\phpUtils\Utils::getIPAddress()
+### getIPAddress
 
 ```
 string|boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getIPAddress()()
@@ -416,7 +416,7 @@ Get IP address of visitor
 
 
 
-### \gkcgautam\phpUtils\Utils::getRandArrayVal()
+### getRandArrayVal
 
 ```
 mixed gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getRandArrayVal()(array $array)
@@ -435,7 +435,7 @@ Returns random value from an array
 
 
 
-### \gkcgautam\phpUtils\Utils::getRandString()
+### getRandString
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getRandString()(integer $length, boolean $include_numbers, boolean $include_symbols)
@@ -456,7 +456,7 @@ Returns a random string of specified length
 
 
 
-### \gkcgautam\phpUtils\Utils::die404()
+### die404
 
 ```
 mixed gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::die404()()
@@ -471,7 +471,7 @@ Returns 404 header and die
 
 
 
-### \gkcgautam\phpUtils\Utils::makeDir()
+### makeDir
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::makeDir()(string $path, integer $permission, boolean $recursive)
@@ -492,7 +492,7 @@ Creates a directory
 
 
 
-### \gkcgautam\phpUtils\Utils::deleteFile()
+### deleteFile
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::deleteFile()(string $path, boolean $success_if_file_not_found)
@@ -512,7 +512,7 @@ Deletes a file
 
 
 
-### \gkcgautam\phpUtils\Utils::isHTTPS()
+### isHTTPS
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::isHTTPS()()
@@ -527,7 +527,7 @@ Checks to see if the page is being server over SSL or not
 
 
 
-### \gkcgautam\phpUtils\Utils::safeTruncate()
+### safeTruncate
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::safeTruncate()(string $string, integer $length, string $append)
@@ -549,7 +549,7 @@ Soure: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65
 
 
 
-### \gkcgautam\phpUtils\Utils::forceDownload()
+### forceDownload
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::forceDownload()(string $filename, string $content)
@@ -574,7 +574,7 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 
 
-### \gkcgautam\phpUtils\Utils::getGravatar()
+### getGravatar
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getGravatar()(string $email, integer $size)
@@ -594,7 +594,7 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 
 
-### \gkcgautam\phpUtils\Utils::getHumanTimeDiff()
+### getHumanTimeDiff
 
 ```
 string gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::getHumanTimeDiff()(integer $from, integer $to, boolean $as_text, string $suffix)
@@ -617,7 +617,7 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 
 
-### \gkcgautam\phpUtils\Utils::noCacheHeaders()
+### noCacheHeaders
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::noCacheHeaders()()
@@ -635,7 +635,7 @@ Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c6
 
 
 
-### \gkcgautam\phpUtils\Utils::utf8Headers()
+### utf8Headers
 
 ```
 boolean gkcgautam\phpUtils\Utils::\gkcgautam\phpUtils\Utils::utf8Headers()(string $content_type)

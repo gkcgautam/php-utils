@@ -60,6 +60,7 @@ class Utils
      * Original Source: http://php.net/manual/de/function.filesize.php#112996
      * 
      * @param string $bytes 
+     * @param int $decimals
      * @return string human readable file size (2.87 МB)
      */ 
     public static function getHumanReadableFileSize ($bytes, $decimals=2)
@@ -353,6 +354,7 @@ class Utils
      * 
      * @param int $length
      * @param boolean $include_numbers
+     * @param boolean $include_symbols
      * @return string
      */
     public static function getRandString($length = 10, $include_numbers = true, $include_symbols = false)
@@ -527,9 +529,10 @@ class Utils
      * or "2 weeks ago".
      * Source: https://github.com/brandonwamboldt/utilphp/blob/2bd3b7989d9c617b49a190c65dcd192d9c47d755/src/utilphp/util.php#L974
      *
-     * @param  int    $from   The date to use as a starting point
-     * @param  int    $to     The date to compare to, defaults to now
-     * @param  string $suffix The string to add to the end, defaults to " ago"
+     * @param  int     $from   The date to use as a starting point
+     * @param  int     $to     The date to compare to, defaults to now
+     * @param  boolean $as_text
+     * @param  string  $suffix The string to add to the end, defaults to " ago"
      * @return string
      */
     public static function getHumanTimeDiff( $from, $to = '', $as_text = FALSE, $suffix = ' ago' )

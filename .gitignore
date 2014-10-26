@@ -4,3 +4,9 @@
 *Thumbs.db
 *error_log
 *.log
+
+vendor/
+vendor/**/.git/
+
+*node_modules
+*.map
